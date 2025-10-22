@@ -1,9 +1,10 @@
 // Tic Tac Toe
 
-const cell = document.querySelectorAll(".cell");
+const cells = document.querySelectorAll(".cell"); // Mengubah 'cells' menjadi 'cell'
 const statusText = document.querySelector("#statusText");
-const restartBtn = document.querySelector("restartBtn");
+const restartBtn = document.querySelector("#restartBtn");
 
+// Possible winning combinations
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -15,11 +16,12 @@ const winConditions = [
     [2, 4, 6]
 ];
 
-let options = ["", "", "", "", "", "", "", "", ""];
+// Game variables
+let options = ["", "", "", "", "", "", "", "", ""]; // Array to hold the state of the board
 let currentPlayer = "X";
-let running = false;
+let running = false; // Game state
 
-initializeGame();
+initializeGame(); // To begin the game
 
 function initializeGame() {
     cells.forEach(cell => cell.addEventListener("click", cellClicked));
